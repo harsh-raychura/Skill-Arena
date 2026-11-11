@@ -1,0 +1,40 @@
+:root{--g:#1f3d2b;--g2:#2f5a40;--sage:#a8b8a0;--sage2:#e4eadd;--m:#d9a82e;--b:#f6efc9;--ink:#1b2a21;--red:#b3392f}
+*{box-sizing:border-box}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;background:#f3f5ef;color:var(--ink)}
+h1,h2,h3,.brand{font-family:'Fraunces',Georgia,serif;margin:0 0 .5rem}
+:focus-visible{outline:3px solid var(--m);outline-offset:2px}
+.topbar{position:fixed;inset:0 0 auto 0;height:60px;background:var(--g);color:var(--b);display:flex;align-items:center;gap:1rem;padding:0 1.2rem;z-index:30}
+.topbar .brand{font-size:1.2rem;letter-spacing:.04em;margin:0 auto 0 0}
+.topbar button{background:none;border:0;color:var(--b);font-size:1.3rem;cursor:pointer}
+.side{position:fixed;top:60px;bottom:0;left:0;width:224px;background:#fff;border-right:1px solid var(--sage);padding:1rem .7rem;transition:transform .2s;z-index:20}
+.side a{display:block;padding:.6rem .9rem;border-radius:8px;color:var(--ink);text-decoration:none;margin-bottom:.15rem}
+.side a:hover{background:var(--sage2)}.side a.on{background:var(--g);color:var(--b)}
+#content{margin:60px 0 0 224px;padding:1.6rem}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.btn-main,.btn-ghost,.ic{border-radius:8px;padding:.5rem 1.1rem;font-weight:600;border:2px solid var(--g);cursor:pointer;font:inherit;font-weight:600}
+.btn-main{background:var(--g);color:var(--b)}.btn-ghost{background:transparent;color:var(--g)}
+.ic{border:0;background:none;padding:.2rem .4rem;font-size:1.05rem}
+.bar{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1rem}.bar>*{flex:1;min-width:170px}
+.form-control,.form-select{width:100%;padding:.5rem .8rem;border:1.5px solid var(--sage);border-radius:8px;background:#fff;font:inherit}
+.form-control.is-invalid{border-color:var(--red)}.err{color:var(--red);font-size:.85rem}
+label{font-weight:600;font-size:.9rem;display:block;margin-bottom:.2rem}.mb-2{margin-bottom:.8rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-bottom:1.2rem}
+.stat,.panel{background:#fff;border:1px solid var(--sage);border-radius:10px;padding:1rem 1.2rem}
+.stat b{display:block;font-size:1.9rem;font-family:'Fraunces',serif;color:var(--g)}
+.tw{overflow-x:auto;background:#fff;border:1px solid var(--sage);border-radius:10px}
+table{width:100%;border-collapse:collapse;min-width:560px}th{background:var(--sage2);text-align:left}
+th,td{padding:.65rem .9rem;border-bottom:1px solid #e3e8dc;font-size:.92rem}
+.badge{padding:.15rem .6rem;border-radius:99px;background:var(--sage2);font-size:.8rem;font-weight:600}
+.badge.ok{background:#d7ecd0;color:#1d5a2a}.badge.off{background:#f3d6d2;color:var(--red)}.badge.dr{background:#f4e6b3;color:#7a5a00}
+.pager{display:flex;gap:.4rem;justify-content:center;margin-top:1rem}
+.pg{border:1.5px solid var(--sage);background:#fff;border-radius:6px;min-width:34px;padding:.3rem;cursor:pointer}.pg.on{background:var(--g);color:var(--b)}
+.chart{width:100%;height:auto}
+.tabs{display:flex;gap:1.4rem;border-bottom:2px solid var(--sage);margin-bottom:1rem}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:.5rem 0;font:inherit;font-weight:600;cursor:pointer}.tabs button.on{border-color:var(--m)}
+dialog{border:0;border-radius:12px;padding:1.4rem;width:min(440px,92vw);box-shadow:0 10px 40px #0005}
+dialog::backdrop{background:#0006}.end{display:flex;justify-content:flex-end;gap:.6rem;margin-top:1rem}
+.login{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:#fff}
+.login>div{display:grid;place-content:center;padding:2rem}.login .l{background:var(--g);color:var(--b);text-align:center}
+.login .l b{font-size:4rem;display:block}.login form{width:min(380px,100%)}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--g);color:var(--b);padding:.7rem 1.3rem;border-radius:8px;display:none;z-index:99}#toast.show{display:block}
+@media(max-width:992px){.side{transform:translateX(-100%)}.side.open{transform:none}#content{margin-left:0}.login{grid-template-columns:1fr}.login .l{padding:2rem}}
